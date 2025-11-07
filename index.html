@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="reframme - Arquitetura e Visualização 3D">
+    <title>reframme</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- HEADER COM RELÓGIO E DARK MODE -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <!-- Relógio São Paulo -->
+            <div class="header-time">
+                <span class="time-label">são paulo</span>
+                <span class="time-display" id="clockSP">--:--:--</span>
+            </div>
+
+            <!-- Navegação Central -->
+            <nav class="nav" id="nav">
+                <a href="#trabalhos" class="nav-link">trabalhos</a>
+                <a href="#servicos" class="nav-link">serviços</a>
+                <a href="#sobre" class="nav-link">sobre</a>
+                <a href="#contato" class="nav-link">contato</a>
+            </nav>
+
+            <!-- Dark Mode Toggle -->
+            <div class="header-actions">
+                <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- GALERIA MASONRY - IMAGENS COLADAS -->
+    <main class="main-content" id="trabalhos">
+        <div class="masonry-wrapper">
+
+            <!-- Coluna 1 -->
+            <div class="masonry-column">
+                <div class="masonry-item tall" data-image="1">
+                    <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80')"></div>
+                </div>
+                <div class="masonry-item wide" data-image="2">
+                    <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80')"></div>
+                </div>
+                <div class="masonry-item" data-image="3">
+                    <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80')"></div>
+                </div>
+                <div class="masonry-item wide" data-image="4">
+                    <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80')"></div>
+                </div>
+                <div class="masonry-item tall" data-image="5">
+                    <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&q=80')"></div>
+                </div>
+                <div class="masonry-item" data-image="6">
+                    <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&q=80')"></div>
+                </div>
+            </div>
+
+            <!-- Coluna 2 -->
+            <div class="masonry-column">
+                <div class="masonry-item" data-image="7">
+                    <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1600607687324-09d4e1c6f1f1?w=800&q=80')"></div>
+                </div>
+                <div class="masonry-item tall" data-image="8">
+                    <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&q=80')"></div>
+                </div>
+                <div class="masonry-item wide" data-image="9">
+                    <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=800&q=80')"></div>
+                </div>
+                <div class="masonry-item" data-image="10">
+                    <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=800&q=80')"></div>
+                </div>
+                <div class="masonry-item tall" data-image="11">
+                    <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1600607687127-4c5b3e9f9be4?w=800&q=80')"></div>
+                </div>
+                <div class="masonry-item wide" data-image="12">
+                    <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1600607688969-a5bfcd646154?w=800&q=80')"></div>
+                </div>
+            </div>
+
+            <!-- Coluna 3 -->
+            <div class="masonry-column">
+                <div class="masonry-item wide" data-image="13">
+                    <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80')"></div>
+                </div>
+                <div class="masonry-item" data-image="14">
+                    <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&q=80')"></div>
+                </div>
+                <div class="masonry-item tall" data-image="15">
+                    <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1600121848594-d8644e57abab?w=800&q=80')"></div>
+                </div>
+                <div class="masonry-item wide" data-image="16">
+                    <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1600607687664-c0fce3d63aea?w=800&q=80')"></div>
+                </div>
+                <div class="masonry-item" data-image="17">
+                    <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1600566752734-11fe6fc4c633?w=800&q=80')"></div>
+                </div>
+                <div class="masonry-item tall" data-image="18">
+                    <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80')"></div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- SEÇÃO SERVIÇOS -->
+    <section class="servicos" id="servicos">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h2 class="section-title">serviços</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-item">
+                    <h3 class="service-title">visualização 3d</h3>
+                    <p class="service-description">Renderizações fotorrealistas de alta qualidade que capturam cada detalhe do seu projeto arquitetônico.</p>
+                </div>
+                <div class="service-item">
+                    <h3 class="service-title">animação arquitetônica</h3>
+                    <p class="service-description">Tours virtuais e animações cinematográficas que trazem vida aos espaços projetados.</p>
+                </div>
+                <div class="service-item">
+                    <h3 class="service-title">modelagem 3d</h3>
+                    <p class="service-description">Modelagem detalhada e precisa de edifícios, interiores e elementos arquitetônicos.</p>
+                </div>
+                <div class="service-item">
+                    <h3 class="service-title">pós-produção</h3>
+                    <p class="service-description">Tratamento refinado de imagens para resultados profissionais impecáveis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO SOBRE -->
+    <section class="sobre" id="sobre">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2 class="section-title">sobre</h2>
+            </div>
+            <div class="sobre-content">
+                <div class="sobre-text">
+                    <p>O reframme é um estúdio especializado em visualização arquitetônica e renderizações 3D de alta qualidade.</p>
+                    <p>Nossa missão é transformar conceitos arquitetônicos em imagens fotorrealistas que comunicam a essência e o potencial de cada projeto.</p>
+                    <p>Com uma abordagem minimalista e atenção aos detalhes, criamos visualizações que vão além do técnico, explorando luz, composição e atmosfera para contar histórias visuais impactantes.</p>
+                </div>
+                <div class="sobre-info">
+                    <div class="info-item">
+                        <span class="info-label">localização</span>
+                        <span class="info-value">joinville, brasil</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">fundado</span>
+                        <span class="info-value">2022</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">projetos</span>
+                        <span class="info-value">150+</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO CONTATO COM FORMULÁRIO -->
+    <section class="contato" id="contato">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2 class="section-title">contato</h2>
+            </div>
+            <div class="contato-grid">
+                <div class="contato-info">
+                    <p class="contato-intro">Vamos criar algo extraordinário juntos.</p>
+                    <div class="contato-details">
+                        <div class="detail-item">
+                            <span class="detail-label">email</span>
+                            <a href="mailto:contato@reframme.com" class="detail-value">contato@reframme.com</a>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">telefone</span>
+                            <a href="tel:+5547999426164" class="detail-value">+55 47 99942-6164</a>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">social</span>
+                            <div class="social-links">
+                                <a href="#" class="social-link">instagram</a>
+                                <a href="#" class="social-link">behance</a>
+                                <a href="#" class="social-link">linkedin</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FORMULÁRIO -->
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" id="firstName" name="firstName" placeholder="nome" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="lastName" name="lastName" placeholder="sobrenome" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="6" placeholder="mensagem" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">enviar mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2024 reframme. todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- MODAL PARA VISUALIZAR IMAGENS -->
+    <div class="modal" id="imageModal">
+        <button class="modal-close" id="modalClose">&times;</button>
+        <div class="modal-content">
+            <img src="" alt="Visualização ampliada" id="modalImage">
+        </div>
+        <button class="modal-nav modal-prev" id="modalPrev">‹</button>
+        <button class="modal-nav modal-next" id="modalNext">›</button>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
