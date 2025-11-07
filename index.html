@@ -3,199 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="LOOK'N FEEL - Estúdio de Arquitetura e Visualização 3D">
-    <title>LOOK'N FEEL | Arquitetura & ArchViz</title>
+    <meta name="description" content="reframme - Arquitetura e Visualização 3D">
+    <title>reframme</title>
     <link rel="stylesheet" href="css/style.css">
-    <!-- Fonte minimalista e elegante -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- HEADER FIXO NO TOPO -->
-    <!-- Header minimalista com logo centralizado e navegação limpa -->
+    <!-- HEADER MINIMALISTA ESTILO REFRAMME -->
     <header class="header" id="header">
-        <div class="container">
-            <div class="header-content">
-                <!-- Logo estilo Reframme -->
-                <a href="#" class="logo">LOOK'N FEEL</a>
-
-                <!-- Navegação simples: apenas Trabalhos e Sobre -->
-                <nav class="nav">
-                    <a href="#trabalhos" class="nav-link">Trabalhos</a>
-                    <a href="#sobre" class="nav-link">Sobre</a>
-                </nav>
-
-                <!-- Menu mobile toggle -->
-                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
+        <div class="header-container">
+            <a href="#" class="logo">reframme</a>
+            <nav class="nav" id="nav">
+                <a href="#" class="nav-link">trabalhos</a>
+                <a href="#sobre" class="nav-link">sobre</a>
+                <a href="#contato" class="nav-link">contato</a>
+            </nav>
         </div>
     </header>
 
-    <!-- SEÇÃO PRINCIPAL: GALERIA DE PROJETOS (TRABALHOS) -->
-    <!-- Grid fluido de imagens grandes com animação de scroll reveal -->
-    <section class="trabalhos" id="trabalhos">
-        <div class="container-fluid">
+    <!-- GALERIA MASONRY ESTILO REFRAMME -->
+    <main class="main-content">
+        <div class="masonry-wrapper">
 
-            <!-- Grid de projetos com 2-3 colunas responsivas -->
-            <div class="gallery">
-
-                <!-- Projeto 1 -->
-                <div class="gallery-item" data-scroll>
-                    <div class="gallery-image">
-                        <div class="image-placeholder"></div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h3 class="project-name">Villa Moderna</h3>
-                        <p class="project-type">Residencial</p>
-                    </div>
+            <!-- Coluna 1 -->
+            <div class="masonry-column">
+                <div class="masonry-item tall">
+                    <div class="item-image"></div>
                 </div>
-
-                <!-- Projeto 2 -->
-                <div class="gallery-item" data-scroll>
-                    <div class="gallery-image">
-                        <div class="image-placeholder"></div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h3 class="project-name">Loft Urbano</h3>
-                        <p class="project-type">Interior Design</p>
-                    </div>
+                <div class="masonry-item">
+                    <div class="item-image"></div>
                 </div>
-
-                <!-- Projeto 3 -->
-                <div class="gallery-item" data-scroll>
-                    <div class="gallery-image">
-                        <div class="image-placeholder"></div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h3 class="project-name">Complexo Corporativo</h3>
-                        <p class="project-type">Comercial</p>
-                    </div>
+                <div class="masonry-item wide">
+                    <div class="item-image"></div>
                 </div>
-
-                <!-- Projeto 4 -->
-                <div class="gallery-item" data-scroll>
-                    <div class="gallery-image">
-                        <div class="image-placeholder"></div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h3 class="project-name">Casa Minimalista</h3>
-                        <p class="project-type">Residencial</p>
-                    </div>
+                <div class="masonry-item">
+                    <div class="item-image"></div>
                 </div>
-
-                <!-- Projeto 5 -->
-                <div class="gallery-item" data-scroll>
-                    <div class="gallery-image">
-                        <div class="image-placeholder"></div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h3 class="project-name">Espaço Cultural</h3>
-                        <p class="project-type">Público</p>
-                    </div>
+                <div class="masonry-item tall">
+                    <div class="item-image"></div>
                 </div>
-
-                <!-- Projeto 6 -->
-                <div class="gallery-item" data-scroll>
-                    <div class="gallery-image">
-                        <div class="image-placeholder"></div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h3 class="project-name">Penthouse</h3>
-                        <p class="project-type">Residencial</p>
-                    </div>
-                </div>
-
-                <!-- Projeto 7 -->
-                <div class="gallery-item" data-scroll>
-                    <div class="gallery-image">
-                        <div class="image-placeholder"></div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h3 class="project-name">Hotel Boutique</h3>
-                        <p class="project-type">Hospitalidade</p>
-                    </div>
-                </div>
-
-                <!-- Projeto 8 -->
-                <div class="gallery-item" data-scroll>
-                    <div class="gallery-image">
-                        <div class="image-placeholder"></div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h3 class="project-name">Residência de Campo</h3>
-                        <p class="project-type">Residencial</p>
-                    </div>
-                </div>
-
-                <!-- Projeto 9 -->
-                <div class="gallery-item" data-scroll>
-                    <div class="gallery-image">
-                        <div class="image-placeholder"></div>
-                    </div>
-                    <div class="gallery-caption">
-                        <h3 class="project-name">Escritório Contemporâneo</h3>
-                        <p class="project-type">Comercial</p>
-                    </div>
-                </div>
-
             </div>
+
+            <!-- Coluna 2 -->
+            <div class="masonry-column">
+                <div class="masonry-item">
+                    <div class="item-image"></div>
+                </div>
+                <div class="masonry-item tall">
+                    <div class="item-image"></div>
+                </div>
+                <div class="masonry-item">
+                    <div class="item-image"></div>
+                </div>
+                <div class="masonry-item wide">
+                    <div class="item-image"></div>
+                </div>
+                <div class="masonry-item">
+                    <div class="item-image"></div>
+                </div>
+            </div>
+
+            <!-- Coluna 3 -->
+            <div class="masonry-column">
+                <div class="masonry-item wide">
+                    <div class="item-image"></div>
+                </div>
+                <div class="masonry-item">
+                    <div class="item-image"></div>
+                </div>
+                <div class="masonry-item tall">
+                    <div class="item-image"></div>
+                </div>
+                <div class="masonry-item">
+                    <div class="item-image"></div>
+                </div>
+                <div class="masonry-item">
+                    <div class="item-image"></div>
+                </div>
+            </div>
+
         </div>
-    </section>
+    </main>
 
     <!-- SEÇÃO SOBRE -->
-    <!-- Informações sobre o estúdio com muito espaçamento e tipografia elegante -->
     <section class="sobre" id="sobre">
-        <div class="container">
-            <div class="sobre-content" data-scroll>
-                <h2 class="sobre-title">Sobre</h2>
-                <div class="sobre-text">
-                    <p>
-                        O LOOK'N FEEL é um estúdio especializado em visualização arquitetônica
-                        e renderizações 3D de alta qualidade. Nossa missão é transformar conceitos
-                        arquitetônicos em imagens fotorrealistas que comunicam a essência e o
-                        potencial de cada projeto.
-                    </p>
-                    <p>
-                        Com uma abordagem minimalista e atenção aos detalhes, criamos visualizações
-                        que vão além do técnico, explorando luz, composição e atmosfera para
-                        contar histórias visuais impactantes.
-                    </p>
-                    <p>
-                        Trabalhamos em estreita colaboração com arquitetos, designers e
-                        incorporadores, oferecendo desde renderizações estáticas até animações
-                        e tours virtuais completos.
-                    </p>
-                </div>
-
-                <!-- Informações de contato minimalistas -->
-                <div class="sobre-contact">
-                    <div class="contact-info">
-                        <p>contato@looknfeel.com</p>
-                        <p>+55 (11) 99999-9999</p>
-                    </div>
-                    <div class="contact-social">
-                        <a href="#" class="social-link">Instagram</a>
-                        <a href="#" class="social-link">Behance</a>
-                        <a href="#" class="social-link">LinkedIn</a>
-                    </div>
-                </div>
+        <div class="sobre-container">
+            <h2 class="sobre-title">sobre</h2>
+            <div class="sobre-content">
+                <p>O reframme é um estúdio especializado em visualização arquitetônica e renderizações 3D de alta qualidade.</p>
+                <p>Nossa missão é transformar conceitos arquitetônicos em imagens fotorrealistas que comunicam a essência e o potencial de cada projeto.</p>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER MINIMALISTA -->
+    <!-- SEÇÃO CONTATO -->
+    <section class="contato" id="contato">
+        <div class="contato-container">
+            <h2 class="contato-title">contato</h2>
+            <div class="contato-content">
+                <p><a href="mailto:contato@reframme.com">contato@reframme.com</a></p>
+                <p><a href="tel:+5547999426164">+55 47 99942-6164</a></p>
+            </div>
+            <div class="contato-social">
+                <a href="#" class="social-link">instagram</a>
+                <a href="#" class="social-link">behance</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer class="footer">
-        <div class="container">
-            <p class="footer-text">&copy; 2024 LOOK'N FEEL. Todos os direitos reservados.</p>
+        <div class="footer-container">
+            <p>&copy; 2024 reframme</p>
         </div>
     </footer>
 
-    <!-- JavaScript para interatividade -->
     <script src="js/script.js"></script>
 </body>
 </html>

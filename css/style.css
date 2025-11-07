@@ -1,9 +1,8 @@
-/* ==============================================
-   PORTFÓLIO MINIMALISTA ESTILO REFRAMME
-   Arquitetura & Visualização 3D
-   ============================================== */
+/* ============================================
+   PORTFÓLIO REFRAMME STYLE
+   Design ultra-minimalista com grid masonry
+   ============================================ */
 
-/* ========== RESET & VARIÁVEIS CSS ========== */
 * {
     margin: 0;
     padding: 0;
@@ -11,525 +10,303 @@
 }
 
 :root {
-    /* Cores minimalistas - fundo claro, texto escuro */
-    --bg-primary: #ffffff;
-    --bg-secondary: #f8f8f8;
-    --text-primary: #2a2a2a;
-    --text-secondary: #6a6a6a;
-    --text-light: #9a9a9a;
-    --border-light: #e5e5e5;
-
-    /* Fontes elegantes e finas */
-    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-display: 'Lora', Georgia, serif;
-
-    /* Transições suaves para interações */
-    --transition-smooth: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-medium: all 0.4s ease;
-    --transition-fast: all 0.2s ease;
-
-    /* Espaçamentos generosos */
-    --spacing-xs: 1rem;
-    --spacing-sm: 2rem;
-    --spacing-md: 4rem;
-    --spacing-lg: 6rem;
-    --spacing-xl: 8rem;
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --spacing: 3vw;
 }
 
-/* ========== BASE STYLES ========== */
 html {
     scroll-behavior: smooth;
-    font-size: 16px;
 }
 
 body {
-    font-family: var(--font-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 14px;
     font-weight: 300;
-    color: var(--text-primary);
-    background-color: var(--bg-primary);
-    line-height: 1.7;
-    overflow-x: hidden;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
-/* ========== CONTAINERS ========== */
-/* Container padrão com margens generosas */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 6%;
-}
-
-/* Container fluido para imagens grandes */
-.container-fluid {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 4%;
-}
-
-/* ========== TIPOGRAFIA ========== */
 a {
     text-decoration: none;
     color: inherit;
-    transition: var(--transition-fast);
 }
 
-/* ========== HEADER FIXO NO TOPO ========== */
-/* Header minimalista que fica fixo durante o scroll */
+/* ============================================
+   HEADER
+   ============================================ */
 .header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    padding: 2rem 0;
-    background-color: rgba(255, 255, 255, 0);
-    backdrop-filter: blur(10px);
-    transition: var(--transition-medium);
-}
-
-/* Header com fundo quando rolar a página */
-.header.scrolled {
     background-color: rgba(255, 255, 255, 0.98);
-    box-shadow: 0 1px 0 var(--border-light);
-    padding: 1.5rem 0;
+    padding: 2rem var(--spacing);
 }
 
-.header-content {
+.header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 2200px;
+    margin: 0 auto;
 }
 
-/* Logo estilo Reframme - fonte fina e espaçada */
 .logo {
-    font-size: 0.875rem;
+    font-size: 18px;
     font-weight: 300;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--text-primary);
+    letter-spacing: 0;
+    text-transform: lowercase;
 }
 
-/* Navegação horizontal simples */
 .nav {
     display: flex;
-    gap: 3rem;
+    gap: 2.5rem;
 }
 
 .nav-link {
-    font-size: 0.875rem;
+    font-size: 14px;
     font-weight: 300;
-    letter-spacing: 0.1em;
-    color: var(--text-secondary);
-    position: relative;
-}
-
-/* Efeito de underline sutil no hover */
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background-color: var(--text-primary);
-    transition: var(--transition-medium);
+    text-transform: lowercase;
+    transition: opacity 0.3s;
 }
 
 .nav-link:hover {
-    color: var(--text-primary);
+    opacity: 0.5;
 }
 
-.nav-link:hover::after {
-    width: 100%;
+/* ============================================
+   MAIN CONTENT - MASONRY GRID
+   ============================================ */
+.main-content {
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
-/* Menu toggle para mobile (inicialmente oculto) */
-.menu-toggle {
-    display: none;
+.masonry-wrapper {
+    display: flex;
+    gap: var(--spacing);
+    padding: 0 var(--spacing);
+    max-width: 2200px;
+    margin: 0 auto;
+}
+
+.masonry-column {
+    flex: 1;
+    display: flex;
     flex-direction: column;
-    gap: 6px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
+    gap: var(--spacing);
 }
 
-.menu-toggle span {
-    width: 24px;
-    height: 1px;
-    background-color: var(--text-primary);
-    transition: var(--transition-fast);
-}
-
-/* ========== SEÇÃO TRABALHOS (GALERIA) ========== */
-/* Galeria de projetos com muito espaço em branco */
-.trabalhos {
-    padding-top: 10rem;
-    padding-bottom: var(--spacing-xl);
-    background-color: var(--bg-primary);
-}
-
-/* Grid fluido que adapta de 3 para 2 para 1 coluna */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 4rem 3rem;
-}
-
-/* Item da galeria com animação de reveal */
-.gallery-item {
-    position: relative;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-/* Classe aplicada pelo JavaScript quando item entra na viewport */
-.gallery-item.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Container da imagem com proporção 4:5 (vertical) */
-.gallery-image {
+.masonry-item {
     position: relative;
     width: 100%;
-    padding-bottom: 125%;
     overflow: hidden;
-    background-color: var(--bg-secondary);
-    cursor: pointer;
 }
 
-/* Placeholder para imagens (substitua por suas imagens reais) */
-.image-placeholder {
-    position: absolute;
-    top: 0;
-    left: 0;
+/* Proporções variadas para criar efeito masonry */
+.masonry-item {
+    aspect-ratio: 3 / 4; /* Padrão: vertical */
+}
+
+.masonry-item.wide {
+    aspect-ratio: 4 / 3; /* Horizontal */
+}
+
+.masonry-item.tall {
+    aspect-ratio: 2 / 3; /* Mais vertical */
+}
+
+.item-image {
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #e8e8e8 0%, #d0d0d0 100%);
-    transition: var(--transition-smooth);
+    background-color: #e5e5e5;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Efeito de zoom suave no hover */
-.gallery-item:hover .image-placeholder {
-    transform: scale(1.05);
+.masonry-item:hover .item-image {
+    transform: scale(1.02);
 }
 
-/* Brilho sutil no hover */
-.gallery-item:hover .gallery-image::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 255, 255, 0.1);
-    pointer-events: none;
-}
-
-/* Legenda do projeto - minimalista */
-.gallery-caption {
-    padding: 1.5rem 0.5rem 0;
-}
-
-.project-name {
-    font-family: var(--font-display);
-    font-size: 1.125rem;
-    font-weight: 400;
-    color: var(--text-primary);
-    margin-bottom: 0.25rem;
-    letter-spacing: 0.02em;
-}
-
-.project-type {
-    font-size: 0.8125rem;
-    font-weight: 300;
-    color: var(--text-light);
-    letter-spacing: 0.05em;
-}
-
-/* ========== SEÇÃO SOBRE ========== */
-/* Seção com informações do estúdio */
+/* ============================================
+   SEÇÃO SOBRE
+   ============================================ */
 .sobre {
-    padding: var(--spacing-xl) 0;
-    background-color: var(--bg-secondary);
+    padding: 8rem var(--spacing);
+    background-color: #fafafa;
 }
 
-.sobre-content {
+.sobre-container {
     max-width: 800px;
     margin: 0 auto;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.sobre-content.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Título da seção - simples e direto */
 .sobre-title {
-    font-family: var(--font-display);
-    font-size: 2rem;
-    font-weight: 400;
-    color: var(--text-primary);
+    font-size: 18px;
+    font-weight: 300;
+    text-transform: lowercase;
     margin-bottom: 3rem;
-    letter-spacing: 0.02em;
 }
 
-/* Texto do sobre com espaçamento generoso */
-.sobre-text {
-    margin-bottom: 4rem;
-}
-
-.sobre-text p {
-    font-size: 1rem;
-    line-height: 1.9;
-    color: var(--text-secondary);
+.sobre-content p {
+    font-size: 16px;
+    line-height: 1.8;
     margin-bottom: 1.5rem;
+    font-weight: 300;
 }
 
-/* Informações de contato minimalistas */
-.sobre-contact {
+/* ============================================
+   SEÇÃO CONTATO
+   ============================================ */
+.contato {
+    padding: 8rem var(--spacing);
+}
+
+.contato-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contato-title {
+    font-size: 18px;
+    font-weight: 300;
+    text-transform: lowercase;
+    margin-bottom: 3rem;
+}
+
+.contato-content p {
+    font-size: 16px;
+    line-height: 2;
+    font-weight: 300;
+}
+
+.contato-content a {
+    transition: opacity 0.3s;
+}
+
+.contato-content a:hover {
+    opacity: 0.5;
+}
+
+.contato-social {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding-top: 3rem;
-    border-top: 1px solid var(--border-light);
-    flex-wrap: wrap;
     gap: 2rem;
-}
-
-.contact-info p {
-    font-size: 0.875rem;
-    color: var(--text-secondary);
-    margin-bottom: 0.5rem;
-    letter-spacing: 0.02em;
-}
-
-/* Links sociais minimalistas */
-.contact-social {
-    display: flex;
-    gap: 2rem;
+    margin-top: 3rem;
 }
 
 .social-link {
-    font-size: 0.875rem;
-    color: var(--text-secondary);
-    letter-spacing: 0.05em;
-    transition: var(--transition-fast);
+    font-size: 14px;
+    font-weight: 300;
+    text-transform: lowercase;
+    transition: opacity 0.3s;
 }
 
 .social-link:hover {
-    color: var(--text-primary);
+    opacity: 0.5;
 }
 
-/* ========== FOOTER MINIMALISTA ========== */
+/* ============================================
+   FOOTER
+   ============================================ */
 .footer {
-    padding: 3rem 0;
-    background-color: var(--bg-primary);
-    border-top: 1px solid var(--border-light);
-}
-
-.footer-text {
-    font-size: 0.75rem;
-    color: var(--text-light);
+    padding: 3rem var(--spacing);
+    background-color: #fafafa;
     text-align: center;
-    letter-spacing: 0.05em;
 }
 
-/* ========== ANIMAÇÕES ========== */
-/* Fade in suave para elementos que entram na viewport */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.footer-container p {
+    font-size: 12px;
+    font-weight: 300;
+    opacity: 0.6;
 }
 
-/* ========== RESPONSIVIDADE ========== */
-/* Tablet landscape */
+/* ============================================
+   RESPONSIVIDADE
+   ============================================ */
+
+/* Tablet */
 @media (max-width: 1024px) {
-    .gallery {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 3rem 2rem;
-    }
-
-    .trabalhos {
-        padding-top: 9rem;
-    }
-}
-
-/* Tablet portrait */
-@media (max-width: 768px) {
     :root {
-        --spacing-lg: 4rem;
-        --spacing-xl: 5rem;
+        --spacing: 4vw;
     }
 
-    .header-content {
-        padding: 0 4%;
-    }
-
-    .nav {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 70%;
-        height: 100vh;
-        background-color: var(--bg-primary);
+    .masonry-wrapper {
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 2rem;
-        padding: 2rem;
-        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
-        transition: var(--transition-medium);
-        z-index: 999;
     }
 
-    .nav.active {
-        right: 0;
+    .masonry-column {
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 
-    .nav-link {
-        font-size: 1rem;
-    }
-
-    .menu-toggle {
-        display: flex;
-        z-index: 1001;
-    }
-
-    /* Animação do menu toggle */
-    .menu-toggle.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .menu-toggle.active span:nth-child(2) {
-        transform: rotate(-45deg) translate(6px, -6px);
-    }
-
-    .gallery {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-
-    .trabalhos {
-        padding-top: 8rem;
-    }
-
-    .sobre-title {
-        font-size: 1.75rem;
-    }
-
-    .sobre-contact {
-        flex-direction: column;
+    .masonry-item {
+        flex: 0 0 calc(50% - calc(var(--spacing) / 2));
     }
 }
 
 /* Mobile */
-@media (max-width: 480px) {
-    .container,
-    .container-fluid {
-        padding: 0 5%;
+@media (max-width: 768px) {
+    :root {
+        --spacing: 5vw;
     }
 
     .header {
-        padding: 1.5rem 0;
+        padding: 1.5rem var(--spacing);
     }
 
-    .header.scrolled {
-        padding: 1rem 0;
+    .nav {
+        gap: 1.5rem;
     }
 
-    .logo {
-        font-size: 0.75rem;
-        letter-spacing: 0.25em;
+    .nav-link {
+        font-size: 13px;
     }
 
-    .gallery {
-        gap: 2.5rem;
+    .main-content {
+        padding-top: 80px;
+        padding-bottom: 60px;
     }
 
-    .gallery-image {
-        padding-bottom: 130%;
-    }
-
-    .project-name {
-        font-size: 1rem;
-    }
-
-    .project-type {
-        font-size: 0.75rem;
-    }
-
-    .sobre {
-        padding: var(--spacing-lg) 0;
-    }
-
-    .sobre-title {
-        font-size: 1.5rem;
-        margin-bottom: 2rem;
-    }
-
-    .sobre-text p {
-        font-size: 0.9375rem;
-    }
-
-    .contact-social {
+    .masonry-column {
         flex-direction: column;
+    }
+
+    .masonry-item {
+        flex: 1;
+    }
+
+    .sobre,
+    .contato {
+        padding: 5rem var(--spacing);
+    }
+
+    .sobre-title,
+    .contato-title {
+        font-size: 16px;
+    }
+
+    .sobre-content p,
+    .contato-content p {
+        font-size: 14px;
+    }
+}
+
+/* Mobile pequeno */
+@media (max-width: 480px) {
+    .logo {
+        font-size: 16px;
+    }
+
+    .nav {
         gap: 1rem;
     }
-}
 
-/* ========== MELHORIAS DE PERFORMANCE ========== */
-/* Otimização para animações e transições */
-.gallery-item,
-.image-placeholder {
-    will-change: transform, opacity;
-}
-
-/* Previne acumulação de transforms */
-.gallery-item.visible {
-    will-change: auto;
-}
-
-/* ========== ACESSIBILIDADE ========== */
-/* Focus visível para navegação por teclado */
-a:focus-visible,
-button:focus-visible {
-    outline: 2px solid var(--text-primary);
-    outline-offset: 4px;
-}
-
-/* Remove outline padrão quando não é foco por teclado */
-a:focus:not(:focus-visible),
-button:focus:not(:focus-visible) {
-    outline: none;
-}
-
-/* ========== IMPRESSÃO ========== */
-@media print {
-    .header,
-    .menu-toggle,
-    .footer {
-        display: none;
-    }
-
-    .trabalhos {
-        padding-top: 2rem;
-    }
-
-    .gallery-item {
-        page-break-inside: avoid;
+    .nav-link {
+        font-size: 12px;
     }
 }
