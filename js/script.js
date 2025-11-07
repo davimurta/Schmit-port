@@ -13,6 +13,8 @@ const modalPrev = document.getElementById('modalPrev');
 const modalNext = document.getElementById('modalNext');
 const masonryItems = document.querySelectorAll('.masonry-item');
 const contactForm = document.getElementById('contactForm');
+const clockSP = document.getElementById('clockSP');
+const darkModeToggle = document.getElementById('darkModeToggle');
 
 let currentImageIndex = 0;
 const totalImages = masonryItems.length;
@@ -54,6 +56,57 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// ========== RELÓGIO DE SÃO PAULO ==========
+function updateSaoPauloClock() {
+    if (!clockSP) return;
+
+    // São Paulo timezone: UTC-3 (BRT - Brasília Time)
+    const now = new Date();
+    const saoPauloTime = new Date(now.toLocaleString('en-US', { timeZone: 'America/Sao_Paulo' }));
+
+    const hours = String(saoPauloTime.getHours()).padStart(2, '0');
+    const minutes = String(saoPauloTime.getMinutes()).padStart(2, '0');
+    const seconds = String(saoPauloTime.getSeconds()).padStart(2, '0');
+
+    clockSP.textContent = `${hours}:${minutes}:${seconds}`;
+}
+
+// Atualizar relógio a cada segundo
+if (clockSP) {
+    updateSaoPauloClock();
+    setInterval(updateSaoPauloClock, 1000);
+}
+
+// ========== DARK MODE ==========
+function initDarkMode() {
+    // Verificar preferência salva
+    const savedMode = localStorage.getItem('darkMode');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (savedMode === 'enabled' || (!savedMode && prefersDark)) {
+        document.body.classList.add('dark-mode');
+    }
+}
+
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+
+    // Salvar preferência
+    if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('darkMode', 'enabled');
+    } else {
+        localStorage.setItem('darkMode', 'disabled');
+    }
+}
+
+// Inicializar dark mode
+initDarkMode();
+
+// Event listener do dark mode toggle
+if (darkModeToggle) {
+    darkModeToggle.addEventListener('click', toggleDarkMode);
+}
+
 // ========== MODAL DE IMAGENS ==========
 // Abrir modal ao clicar na imagem
 masonryItems.forEach((item, index) => {
@@ -90,10 +143,23 @@ function prevImage() {
     modalImage.src = imageSrc;
 }
 
-// Função para obter URL da imagem (substitua com suas imagens reais)
+// Função para obter URL da imagem
 function getImageSrc(index) {
-    // Por enquanto retorna placeholder
-    // Substitua com: return `images/projeto-${index + 1}.jpg`;
+    const item = masonryItems[index];
+    if (!item) return '';
+
+    // Obter a URL da imagem do background-image
+    const itemImage = item.querySelector('.item-image');
+    if (itemImage) {
+        const bgImage = window.getComputedStyle(itemImage).backgroundImage;
+        // Extrair URL do background-image: url("...")
+        const match = bgImage.match(/url\(["']?([^"']*)["']?\)/);
+        if (match && match[1]) {
+            return match[1];
+        }
+    }
+
+    // Fallback para placeholder
     return `https://via.placeholder.com/1200x800/e5e5e5/999999?text=Projeto+${index + 1}`;
 }
 
